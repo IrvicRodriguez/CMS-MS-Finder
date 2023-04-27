@@ -11,7 +11,7 @@ def run_pipeline():
     Returns:
         Nothing as the output... I should maybe add a sucessfull message at the end.
     """
-    # Download and extract the data that is pulled from URL's in config.py into the data folder
+    # Download and extract the data that is pulled from URLs in config.py by using the downloader.py script into the data folder
     download_and_extract_data(DATA_URLS)
     # Load the data folder files into the SQLite database
     load_data_to_db("data", DB_FILE)
