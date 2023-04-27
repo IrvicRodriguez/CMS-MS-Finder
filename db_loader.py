@@ -31,7 +31,7 @@ def load_data_to_db(data_dir, db_file):
             # Read the number of rows in the CSV file for progress tracking using tqdm
             num_lines = sum(1 for _ in open(file_path, 'r')) - 1  # Subtract 1 to exclude header row in the csv.
 
-            # Process the CSV file in chunks. I put 5000 rows as a bases rule. you can change this number based on memory in your system or desired speed.
+            # Process the CSV file in chunks. I put 5000 rows as a base rule. you can change this number based on memory in your system or desired speed.
             chunksize = 5000
             chunk_iter = pd.read_csv(file_path, low_memory=False, chunksize=chunksize)
             # Load the chunks to the database using a progress bar as a visual reference
