@@ -40,8 +40,9 @@ This script will download the necessary data files, process them, and store the 
 ## File Structure
 
 - `main.py`: The main script that executes the data processing pipeline.
-- `download.py`: Contains the function download_and_extract_data for downloading and extracting data files.
-- `load_data.py`: Contains the function load_data_to_db for loading CSV data into the SQLite database.
+- `config.py`: Contains the specific zip file URLs to download from CMS for the rest of the scripts to work.
+- `downloader.py`: Contains the function download_and_extract_data for downloading and extracting data files.
+- `db_loader.py`: Contains the function load_data_to_db for loading CSV data into the SQLite database.
 - `transformations.py`: Contains the function create_and_persist_transformations for creating and persisting data transformations in the database.
 
 Each file contains comments that explain the purpose of each function and how the code works.
