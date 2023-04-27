@@ -1,3 +1,4 @@
+#URLS to download data into data folder. you can add or take away URL's from here to process.
 DATA_URLS = [
     "http://downloads.cms.gov/files/DE1_0_2008_to_2010_Carrier_Claims_Sample_1A.zip",
     "http://downloads.cms.gov/files/DE1_0_2008_to_2010_Carrier_Claims_Sample_1B.zip",
