@@ -1,10 +1,19 @@
 import sqlite3
 
-
+# Function to create and persist transformations in tables in the DB.
 def create_and_persist_transformations(db_file):
+    """
+    Creates and persists transformations on the loaded data.
+
+    Args:
+        db_file (str): The path to the SQLite database file.
+
+    Returns:
+        None. main.py exists after this. I should add an output of finished to let other developers know.
+    """
     conn = sqlite3.connect(db_file)
 
-    # Combine the two carrier files into one table
+    # Combine the two carrier files into one table called combined_carrier
     conn.execute("""
         CREATE TABLE IF NOT EXISTS combined_carrier AS
         SELECT * FROM DE1_0_2008_to_2010_Carrier_Claims_Sample_1A
@@ -12,7 +21,7 @@ def create_and_persist_transformations(db_file):
         SELECT * FROM DE1_0_2008_to_2010_Carrier_Claims_Sample_1B
     """)
 
-    # Create a table with carrier_claim_year and distinct_ms_member_count columns as the main output of this exercise.
+    # Create a table with carrier_claim_year and distinct_ms_member_count columns as the main output.
     conn.execute("""
         CREATE TABLE IF NOT EXISTS ms_member_count_by_year AS
         SELECT
@@ -26,5 +35,6 @@ def create_and_persist_transformations(db_file):
         carrier_claim_year
     """)
 
+    # Commit the changes and close the connection
     conn.commit()
     conn.close()
