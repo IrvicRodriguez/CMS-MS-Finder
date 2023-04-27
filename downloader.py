@@ -22,7 +22,7 @@ def download_and_extract_data(urls):
         total_size = int(response.headers.get("content-length", 0))
         # Create a BytesIO object to store the zip file data in memory without saving the zip file locally.
         zipfile_data = BytesIO()
-        # Download the zip file in chunks. I use 1024 in my local system. you can play with chunk_size based on your system memory or desired performance
+        # Download the zip file in chunks. I use 1024 KB in my local system. you can play with chunk_size based on your system memory or desired performance
         for chunk in tqdm(response.iter_content(chunk_size=1024), desc=f"Downloading {os.path.basename(url)}",
                           total=(total_size // 1024) + 1, unit="KB"):
             zipfile_data.write(chunk)
