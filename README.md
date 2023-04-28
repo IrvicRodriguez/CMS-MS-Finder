@@ -44,5 +44,7 @@ This script will download the necessary data files, process them, and store the 
 - `downloader.py`: Contains the function download_and_extract_data for downloading and extracting data files.
 - `db_loader.py`: Contains the function load_data_to_db for loading CSV data into the SQLite database.
 - `transformations.py`: Contains the function create_and_persist_transformations for creating and persisting data transformations in the database.
+- `requirements.txt`: Contains needed packages to install in the environmennt running.
+- `data`: Folder that contains data file locally after download of zipfiles
 
 Each file contains comments that explain the purpose of each function and how the code works.
